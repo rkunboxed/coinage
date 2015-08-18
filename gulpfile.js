@@ -11,11 +11,6 @@ var gulp = require('gulp'),
 	shell = require('gulp-shell'),
 	uglify = require('gulp-uglify');
 
-// Hello world task.
-gulp.task('hello-world', function() {
-	return gulp.src('').pipe(notify('Hello world!'));
-});
-
 // === STYLES ===
 
 // COMPILING SASS.
