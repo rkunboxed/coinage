@@ -8,6 +8,7 @@
 $color-black: #000;
 $color-white: #FFF;
 $color-gray-light: #EBEBEB;
+$color-blue: #99CCFF;
 
 // By usage.
 $color-text-input: #999;
@@ -24,6 +25,14 @@ $color-border-input: #CCC;
 $color-border-abbr: #666;
 $color-border-table: #CCCCCC;
 
+
+// Breakpoints
+// =======
+$bp-xsmall: 320px;
+$bp-small: 480px;
+$bp-medium: 1000px;
+$bp-large: 1200px;
+
 // Layout.
 // =======
 
@@ -33,8 +42,8 @@ $font-main: 'Helvetica Neue', Arial, sans-serif;
 $font-mono: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 
 // Sizes (rem values that get fed to font-size() mixin).
-$font-size-default: 1.4;
-$font-size-h1: 5.8;
+$font-size-default: 1.2;
+$font-size-h1: 3.8;
 $font-size-h2: 2.8;
 $font-size-h3: 1.8;
 $font-size-h4: 1.8;
@@ -72,3 +81,8 @@ $susy: (
     rem: true,
   )
 );
+
+// Clearfix
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }

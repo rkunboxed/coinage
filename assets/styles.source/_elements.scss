@@ -30,16 +30,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1, .h1 {
-	@include font-size($font-size-h1);
+	@include font-size($font-size-h1/2);
 	font-weight: bold;
+	@include breakpoint($bp-medium) {
+		@include font-size($font-size-h1);
+	}
 }
 h2, .h2 {
-	@include font-size($font-size-h2);
+	@include font-size($font-size-h2/2);
 	font-weight: bold;
+	@include breakpoint($bp-medium) {
+		@include font-size($font-size-h2);
+	}
 }
 h3, .h3 {
-	@include font-size($font-size-h3);
+	@include font-size($font-size-h3/2);
 	font-weight: bold;
+	@include breakpoint($bp-medium) {
+		@include font-size($font-size-h3);
+	}
 }
 h4, .h4 {
 	@include font-size($font-size-h4);
@@ -174,7 +183,7 @@ figure {
 }
 
 table {
-	margin: 0 0 1.5em;
+	margin: 0;
 	width: 100%;
 }
 
@@ -198,10 +207,10 @@ input[type="submit"] {
 	border: 1px solid;
 	border-color: $color-border-button;
 	border-radius: 16px;
-	color: rgba(0, 0, 0, .8);
+	color: black;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	@include font-size(1.2);
+	@include font-size(.8);
 	font-weight: normal;
 	line-height: 1;
 	padding: 9px 1em 8px;

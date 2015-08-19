@@ -1,3 +1,13 @@
+.clearfix:before, .clearfix:after {
+  content: "";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
  * 1. Set default font family to sans-serif.
@@ -385,8 +395,8 @@ select,
 textarea {
   color: #000;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 14px;
-  font-size: 1.4rem;
+  font-size: 12px;
+  font-size: 1.2rem;
   font-weight: normal;
   line-height: 1.5; }
 
@@ -396,19 +406,31 @@ h1, h2, h3, h4, h5, h6 {
   margin: 1.5em 0 .5em; }
 
 h1, .h1 {
-  font-size: 58px;
-  font-size: 5.8rem;
+  font-size: 19px;
+  font-size: 1.9rem;
   font-weight: bold; }
+  @media screen and (min-width: 1000px) {
+    h1, .h1 {
+      font-size: 38px;
+      font-size: 3.8rem; } }
 
 h2, .h2 {
-  font-size: 28px;
-  font-size: 2.8rem;
+  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: bold; }
+  @media screen and (min-width: 1000px) {
+    h2, .h2 {
+      font-size: 28px;
+      font-size: 2.8rem; } }
 
 h3, .h3 {
-  font-size: 18px;
-  font-size: 1.8rem;
+  font-size: 9px;
+  font-size: 0.9rem;
   font-weight: bold; }
+  @media screen and (min-width: 1000px) {
+    h3, .h3 {
+      font-size: 18px;
+      font-size: 1.8rem; } }
 
 h4, .h4 {
   font-size: 18px;
@@ -524,7 +546,7 @@ figure {
   margin: 0; }
 
 table {
-  margin: 0 0 1.5em;
+  margin: 0;
   width: 100%; }
 
 button,
@@ -546,13 +568,13 @@ input[type="submit"] {
   border: 1px solid;
   border-color: #CCCCCC;
   border-radius: 16px;
-  color: rgba(0, 0, 0, 0.8);
+  color: black;
   cursor: pointer;
   /* Improves usability and consistency of cursor style between image-type 'input' and others */
   -webkit-appearance: button;
   /* Corrects inability to style clickable 'input' types in iOS */
-  font-size: 12px;
-  font-size: 1.2rem;
+  font-size: 8px;
+  font-size: 0.8rem;
   font-weight: normal;
   line-height: 1;
   padding: 9px 1em 8px;
@@ -668,11 +690,18 @@ a:hover, a:focus, a:active {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 980px; }
+  max-width: 980px;
+  margin: 0 10px; }
   .page-content:after {
     content: " ";
     display: block;
     clear: both; }
+  @media screen and (min-width: 480px) {
+    .page-content {
+      margin: 0 10px; } }
+  @media screen and (min-width: 1000px) {
+    .page-content {
+      margin: 0 auto; } }
 
 .main {
   width: 100%;
@@ -685,3 +714,69 @@ a:hover, a:focus, a:active {
   background-position: 0 -768px;
   height: 256px;
   width: 256px; }
+
+.module-wrapper {
+  font-size: 9px;
+  font-size: 0.9rem;
+  border: 1px solid #99CCFF;
+  margin: 20px auto 0;
+  max-width: 500px;
+  min-width: 300px; }
+
+.module-header,
+.module-footer {
+  background-color: #99CCFF; }
+
+.module-header {
+  padding: 5px 10px 10px; }
+  .module-header h1 {
+    font-size: 10px;
+    font-size: 1rem;
+    margin: 0; }
+
+.module-footer {
+  font-size: 8px;
+  font-size: 0.8rem;
+  padding: 5px 10px;
+  text-align: center; }
+
+.coinage-form {
+  overflow: hidden;
+  *zoom: 1;
+  margin-bottom: 5px;
+  padding: 5px 10px; }
+  .coinage-form label {
+    display: block;
+    margin-bottom: 5px; }
+  .coinage-form input {
+    float: left;
+    margin-right: 10px;
+    width: 90px; }
+  .coinage-form button {
+    background-color: #cce5ff;
+    border-radius: 4px;
+    float: left;
+    text-transform: none; }
+
+.coinage-results {
+  clear: both;
+  border: 1px solid #99CCFF;
+  margin: 5px 10px 10px; }
+  .coinage-results h2 {
+    font-size: 8px;
+    font-size: 0.8rem;
+    background-color: #99CCFF;
+    font-weight: normal;
+    margin: 0 0 5px;
+    padding: 5px 0;
+    text-align: center; }
+  .coinage-results table {
+    margin-botom: 5px; }
+  .coinage-results td, .coinage-results th {
+    padding: 0 5px; }
+  .coinage-results td:first-child,
+  .coinage-results th:first-child {
+    text-align: left; }
+  .coinage-results td:last-child,
+  .coinage-results th:last-child {
+    text-align: right; }

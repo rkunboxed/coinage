@@ -4,6 +4,15 @@
 .page-content {
 	@include container;
 	max-width: 980px;
+	margin: 0 10px;
+
+	@include breakpoint($bp-small) {
+		margin: 0 10px;
+	}
+	
+	@include breakpoint($bp-medium) {
+		margin: 0 auto;
+	}
 }
 .main {
 	@include span(12);

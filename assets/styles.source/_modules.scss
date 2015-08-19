@@ -1,0 +1,80 @@
+.module-wrapper {
+	@include font-size(.9);
+	border: 1px solid $color-blue;
+	margin: 20px auto 0;
+	max-width: 500px;
+	min-width: 300px;
+}
+
+.module-header,
+.module-footer {
+	background-color: $color-blue;
+}
+
+.module-header {
+	padding: 5px 10px 10px;
+	h1 {
+		@include font-size(1);
+		margin: 0;
+	}
+}
+
+.module-footer {
+	@include font-size(.8);
+	padding: 5px 10px;
+	text-align: center;
+}
+
+.coinage-form {
+	@include clearfix;
+	margin-bottom: 5px;
+	padding: 5px 10px;
+	label {
+		display: block;
+		margin-bottom: 5px;
+	}
+	input {
+		float: left;
+		margin-right: 10px;
+		width: 90px;
+		@include breakpoint($bp-medium);
+	}
+	button {
+		background-color: lighten($color-blue, 10%);
+		border-radius: 4px;
+		float: left;
+		text-transform: none;
+	}
+}
+
+.coinage-results {
+	clear: both;
+	border: 1px solid $color-blue;
+	margin: 5px 10px 10px;
+
+	h2 {
+		@include font-size(.8);
+		background-color: $color-blue;
+		font-weight: normal;
+		margin: 0 0 5px;
+		padding: 5px 0;
+		text-align: center;
+	}
+
+	table {
+		margin-botom: 5px;
+	}
+
+	td, th {
+		padding: 0 5px;
+	}
+
+	td:first-child,
+	th:first-child {
+		text-align: left;
+	}
+	td:last-child,
+	th:last-child {
+		text-align: right;
+	}
+}
