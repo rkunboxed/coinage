@@ -48,6 +48,19 @@
 		background-color: lighten($color-blue, 10%);
 		text-transform: none;
 	}
+
+	.error-text {
+		clear: both;
+		color: red;
+		padding-top: 3px;
+
+		@include breakpoint($bp-small) {
+			clear: none;
+			float: left;
+			line-height: 32px;
+			margin-left: 10px;
+		}
+	}
 }
 
 .coinage-results {

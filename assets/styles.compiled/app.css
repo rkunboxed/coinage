@@ -759,6 +759,16 @@ a:hover, a:focus, a:active {
   .coinage-form button {
     background-color: #cce5ff;
     text-transform: none; }
+  .coinage-form .error-text {
+    clear: both;
+    color: red;
+    padding-top: 3px; }
+    @media screen and (min-width: 480px) {
+      .coinage-form .error-text {
+        clear: none;
+        float: left;
+        line-height: 32px;
+        margin-left: 10px; } }
 
 .coinage-results {
   clear: both;
