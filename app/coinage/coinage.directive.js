@@ -8,7 +8,7 @@
 		function coinageCalc() {
 			var directive = {
 				restrict: 'E',
-				templateUrl: '/app/coinage/coinage.html',
+				templateUrl: 'app/coinage/coinage.html',
 				scope: {},
 				link: linkFunction
 			}
@@ -33,10 +33,11 @@
 				$scope.coinResults = coinResults;
 				$scope.totalPence = totalPence;
 				$scope.errorText = errorText;
+				$scope.amount = ''; // variable for the amount from the template
 
 				$scope.calculate = calculate;
 
-				function calculate(value) {
+				function calculate() {
 					var newNum,
 						roundedNum,
 						pattern = /[^0-9.-]+/g; // get rid of the symbols
@@ -51,7 +52,7 @@
 					// }
 
 					// check to make sure the value doesn't include any disallowed characters
-					if (value.match(/[^£p.\d]/)) {
+					if ($scope.amount.match(/[^£p.\d]/)) {
 						$scope.errorText = 'That is not a valid entry.';
 					}
 
@@ -63,10 +64,10 @@
 						$scope.coinResults.pence2 = 0;
 						$scope.coinResults.pence1 = 0;
 
-						newNum = value.replace(pattern, '');
+						newNum = $scope.amount.replace(pattern, '');
 						roundedNum = Math.round(newNum * 100) / 100;
 
-						if (value.match(/^£/) || value.match(/\./)) {
+						if ($scope.amount.match(/^£/) || $scope.amount.match(/\./)) {
 							// if the value starts with £ or includes a decimal point we need to multiply by 100 to get the pence
 							// using parseInt to fix floating point issues (http://floating-point-gui.de/)
 							$scope.totalPence = parseInt(roundedNum * 100);

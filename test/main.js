@@ -1,31 +1,37 @@
 describe('Testing coinageCalc Directive', function() {
-	var scope,
-		elem,
-		directive,
-		compiled,
-		html,
-		$httpBackend;
+	var $rootScope,
+	$scope,
+	$compile,
+	el,
+	$el,
+	$body = $('body'),
+	simpleHtml = '<coinage-calc></coinage-calc>';
 
 	beforeEach(function() {
-		//load the module
-		module('coinageApp');
+		module('coinageApp','templates');
 
-		//set our view
-		html = '<coinage-calc></coinage-calc>';
-
-		inject(function($compile, $rootScope, $injector) {
-			$httpBackend = $injector.get('$httpBackend');
-			$httpBackend.whenGET('/app/coinage/coinage.html').respond(200, '');
-			scope = $rootScope.$new();
-			elem = angular.element(html);
-			compiled = $compile(elem);
-			compiled(scope);
-			scope.$digest();
+		inject(function ($injector) {
+			$rootScope = $injector.get('$rootScope');
+			$compile = $injector.get('$compile');
+			$scope = $rootScope.$new();
+			el = $compile(angular.element(simpleHtml))($scope);
 		});
+
+		$body.append(el);
+		$rootScope.$digest();
+
+		$el = $('.module-wrapper');
 	});
 
-	it("should be true", function() {
-		// super basic test 
-		expect(true).toBe(true);
+
+	afterEach(function () {
+		$body.empty();
+	});
+
+	it("has an input", function() {
+		expect($el.find('input').length).toBe(1);
+	});
+	it("has a button", function() {
+		expect($el.find('button').length).toBe(1);
 	});
 });

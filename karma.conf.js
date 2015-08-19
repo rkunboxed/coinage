@@ -17,7 +17,9 @@ module.exports = function(config) {
     files: [
       'assets/js.compiled/combined.js',
       'test/angular-mocks.js',
-      'test/main.js'
+      'test/main.js',
+      '*.html',
+      'app/**/*.html'
     ],
 
 
@@ -29,6 +31,11 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+        "app/**/*.html": ["ng-html2js"]
+    },
+
+    ngHtml2JsPreprocessor: {
+        moduleName: 'templates'
     },
 
 
@@ -57,7 +64,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'], // for now let's just get this working in Chrome
+    browsers: ['Firefox'], // for now let's just get this working in Chrome
     //browsers: ['Chrome', 'Firefox', 'Safari'],
 
 

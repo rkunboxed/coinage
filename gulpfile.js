@@ -9,7 +9,8 @@ var gulp = require('gulp'),
 	watch = require('gulp-watch'),
 	concat = require('gulp-concat'),
 	shell = require('gulp-shell'),
-	uglify = require('gulp-uglify');
+	uglify = require('gulp-uglify'),
+	templateCache = require('gulp-angular-templatecache');
 
 // === STYLES ===
 
@@ -100,6 +101,12 @@ gulp.task('js-watch', function() {
 })
 
 // === OTHER ===
+
+gulp.task('template-cache', function () {
+  return gulp.src('app/**/*.html')
+	.pipe(templateCache())
+	.pipe(gulp.dest('public'));
+});
 
 // COMPLETE BUILD.
 // ---------------
