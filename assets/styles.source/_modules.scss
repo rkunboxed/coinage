@@ -33,16 +33,19 @@
 		display: block;
 		margin-bottom: 5px;
 	}
-	input {
+	input,
+	button {
+		border-radius: 4px;
 		float: left;
+		height: 32px;
+	}
+	input {
 		margin-right: 10px;
 		width: 90px;
 		@include breakpoint($bp-medium);
 	}
 	button {
 		background-color: lighten($color-blue, 10%);
-		border-radius: 4px;
-		float: left;
 		text-transform: none;
 	}
 }

@@ -748,14 +748,16 @@ a:hover, a:focus, a:active {
   .coinage-form label {
     display: block;
     margin-bottom: 5px; }
-  .coinage-form input {
+  .coinage-form input,
+  .coinage-form button {
+    border-radius: 4px;
     float: left;
+    height: 32px; }
+  .coinage-form input {
     margin-right: 10px;
     width: 90px; }
   .coinage-form button {
     background-color: #cce5ff;
-    border-radius: 4px;
-    float: left;
     text-transform: none; }
 
 .coinage-results {
