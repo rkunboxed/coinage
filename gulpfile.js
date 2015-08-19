@@ -58,6 +58,7 @@ var jsToConcat = [
 	'./assets/js.source/vendor/angular.js',
 	'./assets/js.source/main.js',
 	'./app/coinage/coinage.module.js',
+	'./app/coinage/coinage.controller.js',
 	'./app/coinage/coinage.directive.js'
 ];
 

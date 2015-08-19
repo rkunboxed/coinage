@@ -1,7 +1,7 @@
 <section class="module-wrapper">
 	<header class="module-header"><h1>Coinage v1.0</h1></header>
 	<div class="coinage-form">
-		<label for="change">Enter monetary value for coin conversion.</label><input ng-model="amount" type="text" value="" name="change" id="change" tabindex="0" /><button ng-click="calculate()" tabindex="0"> Convert</button>
+		<label for="change">Enter monetary value for coin conversion.</label><input ng-model="amount" type="text" value="" name="change" id="change" tabindex="0" /><button ng-click="calculate(amount)" tabindex="0"> Convert</button>
 		<div class="errorText" ng-if="errorText">{{errorText}}</div>
 	</div>
 	<div class="coinage-results">
