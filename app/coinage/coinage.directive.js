@@ -8,7 +8,7 @@
 		function coinageCalc() {
 			var directive = {
 				restrict: 'E',
-				templateUrl: '/app/template.html',
+				templateUrl: '/app/coinage/coinage.html',
 				scope: {},
 				link: linkFunction
 			}
@@ -43,12 +43,18 @@
 
 					// @TODO £ can only start the string value.match(/^£/)
 					// @TODO p can only end the string value.match(/p$/)
-					// @TODO remove leading zeros
+					// if (value.match(/^£|\.|\d/)) {
+					// 	// starts w/valid character
+					// }
+					// if (value.match(/(p|\d|\.)$/)){
+					// 	// ends w/valid character
+					// }
 
 					// check to make sure the value doesn't include any disallowed characters
 					if (value.match(/[^£p.\d]/)) {
 						$scope.errorText = 'That is not a valid entry.';
 					}
+
 					else {
 						// start by clearing any old values
 						$scope.coinResults.pence200 = 0;

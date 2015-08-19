@@ -3,6 +3,6 @@
 
 	// set the module
 	angular
-		.module('coinageApp', []);
+		.module('coinageApp', []); // no dependencies yet
 
 })();

@@ -56,8 +56,8 @@ var jsToConcat = [
 	'./assets/js.source/vendor/jquery-1.11.2.js',
 	'./assets/js.source/vendor/angular.js',
 	'./assets/js.source/main.js',
-	'./app/module.js',
-	'./app/directive.js'
+	'./app/coinage/coinage.module.js',
+	'./app/coinage/coinage.directive.js'
 ];
 
 // The name we want to use for our combined JS file.
@@ -94,13 +94,9 @@ gulp.task('js-minify', ['js-concat'], function() { // second arg is array of tas
 gulp.task('js-watch', function() {
 	// We provide the watch plugin with a glob of files to monitor, then use the batch plugin
 	// throttle execution of the js-minify task.
-	watch(['./assets/js.source/**/*.js', './app/*.js'], batch(function(events, done) {
+	watch(['./assets/js.source/**/*.js', './app/**/*.js'], batch(function(events, done) {
 		gulp.start('js-minify', done);
 	}));
-
-	// watch('./app/*.js', batch(function(events, done) {
-	// 	gulp.start('js-minify', done);
-	// }));
 })
 
 // === OTHER ===
