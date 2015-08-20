@@ -17,7 +17,7 @@ module.exports = function(config) {
     files: [
       'assets/js.compiled/combined.js',
       'test/angular-mocks.js',
-      'test/main.js',
+      'test/tests.js',
       '*.html',
       'app/**/*.html'
     ],
