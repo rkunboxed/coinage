@@ -12,6 +12,8 @@ Requires Ruby and Node. From the root of this project:
 
 ## Testing
 
-* Unit testing is setup with Karma and Jasmine. Run `karma start karma.conf.js` to run the tests.
+* Unit testing is setup with Karma and Jasmine. Run `karma start karma.conf.js` to run the tests in Firefox, Safari and Chrome.
+
+* IE was tested manually on a local VM.
 
 * iOS testing was completed via the iOS Simulator available in Xcode.
