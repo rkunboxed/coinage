@@ -32371,8 +32371,8 @@ var styleDirective = valueFn({
 !window.angular.$$csp() && window.angular.element(document).find('head').prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\\:form{display:block;}.ng-animate-block-transitions{transition:0s all!important;-webkit-transition:0s all!important;}.ng-hide-add-active,.ng-hide-remove{display:block!important;}</style>');
 /**
  * Our primary JavaScript file.
+ * Any JS outside of the Angular app can go here.
  */
-console.log('Non-Angular App JS');
 
 
 (function() {
