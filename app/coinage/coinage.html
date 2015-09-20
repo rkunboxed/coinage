@@ -1,11 +1,11 @@
 <section class="module-wrapper">
 	<header class="module-header"><h1>Coinage v1.0</h1></header>
 	<div class="coinage-form">
-		<label for="change">Enter monetary value for coin conversion.</label><input ng-model="amount" type="text" value="" name="change" id="change" tabindex="0" /><button ng-click="calculate(amount)" tabindex="0"> Convert</button>
-		<div class="error-text" ng-if="errorText">{{errorText}}</div>
+		<label for="change">Enter monetary value for coin conversion.</label><input ng-model="amount" type="text" value="" name="change" id="change" tabindex="0" /><button ng-click="vm.calculate(amount)" tabindex="0"> Convert</button>
+		<div class="error-text" ng-if="errorText">{{vm.errorText}}</div>
 	</div>
 	<div class="coinage-results">
-		<h2>Converting <span>{{totalPence}}</span> pennies into coins.</h2>
+		<h2>Converting <span>{{vm.totalPence}}</span> pennies into coins.</h2>
 		<table>
 			<thead>
 				<tr>
@@ -16,23 +16,23 @@
 			<tbody>
 				<tr>
 					<td>1p</td>
-					<td>{{coinResults.pence1}}</td>
+					<td>{{vm.coinResults.pence1}}</td>
 				</tr>
 				<tr>
 					<td>2p</td>
-					<td>{{coinResults.pence2}}</td>
+					<td>{{vm.coinResults.pence2}}</td>
 				</tr>
 				<tr>
 					<td>50p</td>
-					<td>{{coinResults.pence50}}</td>
+					<td>{{vm.coinResults.pence50}}</td>
 				</tr>
 				<tr>
 					<td>&#163;1</td>
-					<td>{{coinResults.pence100}}</td>
+					<td>{{vm.coinResults.pence100}}</td>
 				</tr>
 				<tr>
 					<td>&#163;2</td>
-					<td>{{coinResults.pence200}}</td>
+					<td>{{vm.coinResults.pence200}}</td>
 				</tr>
 			</tbody>
 		</table>
