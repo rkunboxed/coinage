@@ -32390,8 +32390,7 @@ var styleDirective = valueFn({
 		.module('coinageApp')
 		.controller('coinageController', coinageController);
 
-	coinageController.$inject = ['$scope'];
-	function coinageController($scope) {
+	function coinageController() {
 		var vm = this;
 
 		// set all the initial values to 0
@@ -32407,11 +32406,11 @@ var styleDirective = valueFn({
 			errorText ='';
 
 		// make the values accessible to the template
-		$scope.coinResults = coinResults;
-		$scope.totalPence = totalPence;
-		$scope.errorText = errorText;
+		vm.coinResults = coinResults;
+		vm.totalPence = totalPence;
+		vm.errorText = errorText;
 
-		$scope.calculate = calculate;
+		vm.calculate = calculate;
 
 		function calculate(value) {
 			var newNum,
@@ -32419,7 +32418,7 @@ var styleDirective = valueFn({
 				pattern = /[^0-9.-]+/g; // get rid of the symbols
 
 			if (!value) {
-				$scope.errorText = 'That is not a valid entry.';
+				vm.errorText = 'That is not a valid entry.';
 				return;
 			}
 
@@ -32439,16 +32438,16 @@ var styleDirective = valueFn({
 
 			// check to make sure the value doesn't include any disallowed characters
 			if (value.match(/[^£p.\d]/) || !value.match(/[\d]/)) {
-				$scope.errorText = 'That is not a valid entry.';
+				vm.errorText = 'That is not a valid entry.';
 			}
 
 			else {
 				// start by clearing any old values
-				$scope.coinResults.pence200 = 0;
-				$scope.coinResults.pence100 = 0;
-				$scope.coinResults.pence50 = 0;
-				$scope.coinResults.pence2 = 0;
-				$scope.coinResults.pence1 = 0;
+				vm.coinResults.pence200 = 0;
+				vm.coinResults.pence100 = 0;
+				vm.coinResults.pence50 = 0;
+				vm.coinResults.pence2 = 0;
+				vm.coinResults.pence1 = 0;
 
 				newNum = value.replace(pattern, '');
 				roundedNum = Math.round(newNum * 100) / 100;
@@ -32456,15 +32455,15 @@ var styleDirective = valueFn({
 				if (value.match(/^£/) || value.match(/\./)) {
 					// if the value starts with £ or includes a decimal point we need to multiply by 100 to get the pence
 					// using parseInt to fix floating point issues (http://floating-point-gui.de/)
-					$scope.totalPence = parseInt(roundedNum * 100);
-					numCoins($scope.totalPence);
+					vm.totalPence = parseInt(roundedNum * 100);
+					numCoins(vm.totalPence);
 				}
 				else {
-					$scope.totalPence = roundedNum;
-					numCoins($scope.totalPence);
+					vm.totalPence = roundedNum;
+					numCoins(vm.totalPence);
 				}
 
-				$scope.errorText = '';
+				vm.errorText = '';
 			}
 		}
 
@@ -32473,7 +32472,7 @@ var styleDirective = valueFn({
 				var coinCount = Math.floor(pence / coinsArr[i]), // don't worry about the remainder
 					coinName = 'pence' + coinsArr[i]; // create the result name
 
-				$scope.coinResults[coinName] = coinCount;
+				vm.coinResults[coinName] = coinCount;
 
 				// reduce the current coin's amount from the total pence before proceeding
 				pence -= coinCount * coinsArr[i];
